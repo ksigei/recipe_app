@@ -1,0 +1,35 @@
+<%= render 'layouts/navbar' %>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Recipes</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipes.each_with_index do |recipe, index| %>
+              <tr>
+                <td>
+                 <p><%= recipe.name %></p>
+                  <%= link_to 'Delete', recipes_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+                <td><%= recipe.description %>
+                </td>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</main>
+
+                 
+
+
+
