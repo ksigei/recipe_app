@@ -1,0 +1,7 @@
+<% @recipes.each_with_index do |recipe, index| %>
+  <div class="recipe">
+    <h3><%= recipe.name %></h3>
+    <p><%= recipe.description %></p>
+    <%# <%= link_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>
