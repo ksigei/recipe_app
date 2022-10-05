@@ -14,10 +14,12 @@
           <tbody>
             <% @recipes.each_with_index do |recipe, index| %>
               <tr>
-                <td><%= recipe.name %></td>
-                <td><%= recipe.description %></td>
                 <td>
-                 
+                 <p><%= recipe.name %></p>
+                  <%= link_to 'Delete', recipes_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+                <td><%= recipe.description %>
+                </td>
                 </td>
               </tr>
             <% end %>
@@ -27,6 +29,7 @@
     </div>
 </main>
 
+                 
 
 
 
