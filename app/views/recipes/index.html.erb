@@ -1,7 +1,51 @@
-<% @recipes.each_with_index do |recipe, index| %>
-  <div class="recipe">
-    <h3><%= recipe.name %></h3>
-    <p><%= recipe.description %></p>
-    <%# <%= link_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" } %>
+<!-- inside app/views/welcome/index.html.erb -->  
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">Collapsed content</h5>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
   </div>
-<% end %>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <%# recipe list each with index use bootstrap %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Recipes</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @recipes.each_with_index do |recipe, index| %>
+              <tr>
+                <td><%= recipe.name %></td>
+                <td><%= recipe.description %></td>
+                <td>
+                 
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%# http://127.0.0.1:3000/recipes/new %>
+        <%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary' %>
+
+        
+      </div>
+    </div>
+</main>
+
+
+
+

@@ -76,3 +76,8 @@ gem 'devise'
 
 # faker
 gem 'faker'
+
+# bootstrap
+gem 'bootstrap', '~> 5.1.3'
+# webpacker
+gem 'webpacker', '~> 5.0'
