@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   root 'recipes#index'
-  get 'users/index'
-  get 'users/show'
-  get 'users/new'
-  get 'users/edit'
-  get 'recipes/index'
-  get 'recipes/show'
-  get 'recipes/new'
-  get 'recipes/edit'
+  get 'recipes/new', to: 'recipes#new'
+  post 'recipes', to: 'recipes#create'
   get 'recipes/:id', to: 'recipes#show'
-  # delete 'recipes/:id', to: 'recipes#destroy'
-
-end
+  get 'recipes/:id/edit', to: 'recipes#edit'
+  patch 'recipes/:id', to: 'recipes#update'
+  delete 'recipes/:id', to: 'recipes#destroy'
+  get 'recipes', to: 'recipes#index'
+end 
