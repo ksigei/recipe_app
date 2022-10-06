@@ -1,26 +1,26 @@
-<h2>Log in</h2>
-
+<h2 class="w-full mb-10 text-lg font-bold text-center text-body-dark">Log in</h2>
+<div class="flex justify-center">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mb-4 field">
+    <%= f.label :email, class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="mb-4 field">
+    <%= f.label :password, class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="mb-4 field">
+      <%= f.check_box :remember_me%>
+      <%= f.label :remember_me, class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="flex items-center h-12 p-5 font-semibold leading-none transition duration-300 ease-in-out border border-transparent rounded outline-none actions max-w-fit focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accentH">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>

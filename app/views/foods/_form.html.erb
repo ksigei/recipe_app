@@ -2,26 +2,26 @@
 <%= form_with(model: food, class: "w-2/5 h-full flex flex-col justify-between") do |form| %>
 
   <div>
-    <%= form.label :name, style: "display: block", class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= form.label :name,  class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
     <%= form.text_field :name, class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
   <div>
-    <%= form.label :measurement_unit, style: "display: block", class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= form.label :measurement_unit,  class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
     <%= form.text_field :measurement_unit, class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
   <div>
-    <%= form.label :price, style: "display: block", class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= form.label :price,  class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
     <%= form.number_field :price, class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
   <div>
-    <%= form.label :quantity, style: "display: block", class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
+    <%= form.label :quantity,  class: "block text-body-dark font-semibold text-base leading-none mb-3" %>
     <%= form.number_field :quantity, class: "px-4 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-base focus:outline-none focus:ring-0 border border-border-base focus:border-accent h-10" %>
   </div>
 
-  <div class="font-semibold leading-none rounded border border-transparent p-5 h-12 max-w-fit flex items-center outline-none transition duration-300 ease-in-out focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accentH">
+  <div class="flex items-center h-12 p-5 font-semibold leading-none transition duration-300 ease-in-out border border-transparent rounded outline-none max-w-fit focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accentH">
     <%= form.submit "Add Food"%>
   </div>
 <% end %>

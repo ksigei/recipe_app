@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
       if @food.save
         format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, alert: 'Food was not created.' }
       end
     end
   end

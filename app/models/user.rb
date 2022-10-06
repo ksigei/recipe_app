@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 3..15 }
 
   def recent_recipes
-    recipes.includes(:user).limit(3).order(created_at: :desc)
+    recipes.includes(:user).order(created_at: :desc)
   end
 end

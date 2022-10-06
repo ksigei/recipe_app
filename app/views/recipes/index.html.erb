@@ -1,20 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="w-full mb-10 text-lg font-bold text-center text-body-dark">Recipes</h1>
 
-<h1>Recipes</h1>
-
-<%# <%= button_to "Destroy this recipe", @recipe, method: :delete %>
-
-<div id="recipes">
+<div id="recipes" class="flex flex-col items-center px-8">
+<div>
   <% @recipes.each do |recipe| %>
-    <div>
-      <p><%= recipe.name %></p>
-      <p><%= recipe.description %></p>
-      <%= button_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %>
+    <div class="border-green-800">
+    <div class="font-semibold text-l"><%= link_to (recipe.name), recipe_path(recipe)%></div>
+    <div class="py-4 text-red-600 text-l"><%= button_to "REMOVE", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></div>
     </div>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+    <div>
+      <p class="px-3 py-4 text-sm font-normal text-left break-words bg-light text-textColor"><%= recipe.description %></p>
+    </div>
+    <div class="border"></div>
+     <br />
+     <br />
   <% end %>
+  </div>
 </div>
 
-<%= link_to "New recipe", new_recipe_path %>
+<div class="flex items-center p-4 mt-20 ml-10 font-semibold leading-none transition duration-300 ease-in-out border border-transparent rounded outline-none max-w-fit focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accentH">
+  <%= link_to "New recipe", new_recipe_path %>
+</div>
