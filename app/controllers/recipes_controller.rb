@@ -64,7 +64,7 @@ class RecipesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
 
   def recipe_params
-    params.require(:recipe).permit(:name, :cooking_time, :preparation_time, :description, :public)
+    params.require(:recipe).permit(:name, :cook_time, :prep_time, :description, :public)
   end
 
   def set_recipe
