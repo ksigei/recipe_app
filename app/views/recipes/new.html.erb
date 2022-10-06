@@ -1,34 +1,9 @@
-<%# new recipe bootstrap %>.
-<%# form %>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-        <h1>New Recipe</h1>
-        <%= form_with model: @recipe, local: true do |form| %>
-            <div class="form-group">
-            <%= form.label :name %>
-            <%= form.text_field :name, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-            <%= form.label :description %>
-            <%= form.text_area :description, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-            <%= form.label :prep_time %>
-            <%= form.text_field :prep_time, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-            <%= form.label :cook_time %>
-            <%= form.text_field :cook_time, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-            <%= form.label :user_id %>
-            <%= form.text_field :user_id, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-            <%= form.submit 'Create Recipe', class: 'btn btn-primary' %>
-            </div>
-        <% end %>   
-        </div>
-    </div>
+<h1>New recipe</h1>
+
+<%= render "form", recipe: @recipe %>
+
+<br>
+
+<div class="p-5 mt-20 font-semibold leading-none underline max-w-fit">
+  <%= link_to "Back to recipes", recipes_path %>
 </div>

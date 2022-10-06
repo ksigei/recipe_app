@@ -1,35 +1,22 @@
-<%= render 'layouts/navbar' %>
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Recipes</h1>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @recipes.each_with_index do |recipe, index| %>
-              <tr>
-                <td>
-                 <p><%= recipe.name %></p>
-                  <%= link_to 'Delete', recipes_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-                <td><%= recipe.description %>
-                </td>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+<h1 class="w-full mb-10 text-lg font-bold text-center text-body-dark">Recipes</h1>
+
+<div id="recipes" class="flex flex-col items-center px-8">
+<div>
+  <% @recipes.each do |recipe| %>
+    <div class="border-green-800">
+    <div class="font-semibold text-l"><%= link_to (recipe.name), recipe_path(recipe)%></div>
+    <div class="py-4 text-red-600 text-l"><%= button_to "REMOVE", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></div>
     </div>
-</main>
+    <div>
+      <p class="px-3 py-4 text-sm font-normal text-left break-words bg-light text-textColor"><%= recipe.description %></p>
+    </div>
+    <div class="border"></div>
+     <br />
+     <br />
+  <% end %>
+  </div>
+</div>
 
-                 
-
-
-
+<div class="flex items-center p-4 mt-20 ml-10 font-semibold leading-none transition duration-300 ease-in-out border border-transparent rounded outline-none max-w-fit focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accentH">
+  <%= link_to "New recipe", new_recipe_path %>
+</div>

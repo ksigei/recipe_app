@@ -1,6 +1,13 @@
 class User < ApplicationRecord
-  has_many :recipes
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
+  has_many :recipes, dependent: :destroy
+  has_many :foods, dependent: :destroy
 
-  validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 105 }
+  validates :name, presence: true, length: { in: 3..15 }
+
+  def recent_recipes
+    recipes.includes(:user).order(created_at: :desc)
+  end
 end
