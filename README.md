@@ -83,6 +83,8 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
+- Microverse for all the support
+- Ruby on Rails for the awesome framework
 - Inspiration
 - etc
 

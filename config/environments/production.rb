@@ -101,7 +101,7 @@ Rails.application.configure do
   # For when we deploy to production 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # mailer for production
-  config.action_mailer.default_url_options = { host: 'https://recipe-app-2020.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://recipe-rails-web.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
