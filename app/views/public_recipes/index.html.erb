@@ -2,7 +2,7 @@
 
 <div id="recipes" class="flex flex-col items-center px-8">
 <% if @recipes.empty? %>
-<h1 class="w-full mb-10 text-lg font-bold text-center text-body-dark">There are no recipes at the moment</h1>
+<h1 class="w-full mb-10 text-lg font-bold text-center text-body-dark">Sorry, there are no public recipes at the moment. Check back later.</h1>
 <% end %>
 <div>
   <% @recipes.each do |recipe| %>

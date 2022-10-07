@@ -10,8 +10,8 @@ end
 FactoryBot.define do
   factory :recipe do
     name { 'Pizza' }
-    prep_time { 10 }
-    cook_time { 10 }
+    preparation_time { 10 }
+    cooking_time { 10 }
     description { 'Pizza recipe' }
     public { true }
   end
