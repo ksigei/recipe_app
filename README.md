@@ -39,7 +39,7 @@ Then run
 
 `cd recipe_app`
 
-Open the project in your favorite code editor. `code .` for VS Code.
+Open the project in your favorite code editor.
 
 - Use the command `bundle install` or just simply `bundle` to install all project dependencies.
 - Run `yarn install` to install all the JavaScript dependencies.
