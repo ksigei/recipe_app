@@ -24,6 +24,12 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
+
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
@@ -94,4 +100,15 @@ Rails.application.configure do
 
   # For when we deploy to production 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # mailer for production
+  config.action_mailer.default_url_options = { host: 'https://recipe-app-2020.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            ENV['GMAIL_USERNAME'],
+    password:             ENV['GMAIL_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end
